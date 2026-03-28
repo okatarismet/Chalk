@@ -1,0 +1,32 @@
+{
+  "name": "chalk-css",
+  "version": "0.1.1",
+  "description": "Low-fidelity UI primitives for AI-assisted wireframing. One CSS file. Zero decisions.",
+  "main": "chalk.css",
+  "style": "chalk.css",
+  "files": [
+    "chalk.css",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "wireframe",
+    "lo-fi",
+    "prototyping",
+    "ai",
+    "css",
+    "design",
+    "sketch",
+    "minimal"
+  ],
+  "author": "Ismet Okatar",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/okatarismet/chalk"
+  },
+  "homepage": "https://github.com/okatarismet/chalk#readme",
+  "devDependencies": {
+    "puppeteer": "^24.41.0"
+  }
+}
