@@ -304,3 +304,55 @@ body {
 }
 .wf-toggle.on .track { background: #111; }
 .wf-toggle.on .track::after { left: 19px; background: #fff; border-color: #fff; }
+
+/* ─────────────────────────────────────────
+   BUTTONS
+   ───────────────────────────────────────── */
+
+.wf-btn {
+  border: 2px solid #111;
+  padding: 8px 20px;
+  font-family: monospace;
+  font-size: 14px;
+  background: #fff;
+  cursor: default;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.wf-btn.primary   { background: #111; color: #fff; }
+.wf-btn.secondary { background: #e8e8e8; }
+.wf-btn.ghost     { border-color: #ccc; color: #888; }
+.wf-btn.danger    { border-style: dashed; }
+.wf-btn.sm        { padding: 4px 12px; font-size: 12px; }
+.wf-btn.lg        { padding: 12px 32px; font-size: 16px; }
+.wf-btn.icon      { padding: 6px 10px; }
+.wf-btn.full      { width: 100%; justify-content: center; }
+
+.wf-btn-group { display: flex; }
+.wf-btn-group .wf-btn { border-right-width: 1px; }
+.wf-btn-group .wf-btn:last-child { border-right-width: 2px; }
+
+/* ─────────────────────────────────────────
+   BADGE / TAG / CHIP
+   ───────────────────────────────────────── */
+
+.wf-badge {
+  border: 1px solid #111;
+  padding: 2px 8px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  background: #e8e8e8;
+  display: inline-block;
+  white-space: nowrap;
+}
+.wf-badge.dark    { background: #111; color: #fff; }
+.wf-badge.outline { background: transparent; }
+.wf-badge.pill    { border-radius: 99px; }
+.wf-badge.dot::before {
+  content: '●';
+  margin-right: 4px;
+  font-size: 8px;
+}
