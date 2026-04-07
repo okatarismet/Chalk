@@ -356,3 +356,66 @@ body {
   margin-right: 4px;
   font-size: 8px;
 }
+
+/* ─────────────────────────────────────────
+   TABLE
+   ───────────────────────────────────────── */
+
+.wf-table { border-collapse: collapse; width: 100%; }
+.wf-table th, .wf-table td { border: 1px solid #111; padding: 8px 12px; text-align: left; }
+.wf-table th { background: #e8e8e8; font-weight: bold; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+.wf-table tr:nth-child(even) td { background: #f8f8f8; }
+.wf-table.compact th,
+.wf-table.compact td { padding: 4px 8px; font-size: 12px; }
+
+/* ─────────────────────────────────────────
+   TABS
+   ───────────────────────────────────────── */
+
+.wf-tabs { display: flex; flex-direction: column; }
+.wf-tab-bar {
+  display: flex;
+  border-bottom: 2px solid #111;
+  gap: 0;
+}
+.wf-tab-bar .tab {
+  padding: 8px 20px;
+  border: 2px solid transparent;
+  border-bottom: none;
+  cursor: default;
+  font-size: 13px;
+  margin-bottom: -2px;
+}
+.wf-tab-bar .tab.active {
+  border: 2px solid #111;
+  border-bottom: 2px solid #fff;
+  background: #fff;
+  font-weight: bold;
+}
+.wf-tab-bar .tab:not(.active) { color: #666; }
+.wf-tab-content { border: 2px solid #111; border-top: none; padding: 20px; }
+
+/* ─────────────────────────────────────────
+   BREADCRUMB
+   ───────────────────────────────────────── */
+
+.wf-breadcrumb { display: flex; align-items: center; gap: 6px; font-size: 13px; }
+.wf-breadcrumb .crumb { text-decoration: underline; cursor: default; color: #555; }
+.wf-breadcrumb .crumb.current { text-decoration: none; font-weight: bold; color: #111; cursor: default; }
+.wf-breadcrumb .sep { color: #bbb; }
+
+/* ─────────────────────────────────────────
+   PAGINATION
+   ───────────────────────────────────────── */
+
+.wf-pagination { display: flex; gap: 0; align-items: center; }
+.wf-pagination .page {
+  border: 1px solid #111;
+  padding: 6px 12px;
+  cursor: default;
+  font-size: 13px;
+  border-right-width: 0;
+}
+.wf-pagination .page:last-child { border-right-width: 1px; }
+.wf-pagination .page.active { background: #111; color: #fff; font-weight: bold; }
+.wf-pagination .page.disabled { color: #bbb; border-color: #ddd; }
