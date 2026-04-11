@@ -485,3 +485,76 @@ body {
   min-width: 32px;
 }
 .wf-stepper .step-line.pending { background: #ccc; }
+
+/* ─────────────────────────────────────────
+   KANBAN
+   ───────────────────────────────────────── */
+
+.wf-kanban { display: flex; gap: 16px; align-items: flex-start; overflow-x: auto; }
+.wf-kanban-col {
+  width: 240px;
+  flex-shrink: 0;
+  border: 2px solid #111;
+  display: flex;
+  flex-direction: column;
+}
+.wf-kanban-col .col-header {
+  padding: 10px 14px;
+  border-bottom: 2px solid #111;
+  background: #e8e8e8;
+  font-weight: bold;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.wf-kanban-col .col-body { padding: 12px; display: flex; flex-direction: column; gap: 8px; min-height: 120px; }
+.wf-kanban-card {
+  border: 1px solid #111;
+  padding: 10px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 13px;
+}
+.wf-kanban-card .card-id { font-size: 10px; color: #888; }
+
+/* ─────────────────────────────────────────
+   TIMELINE
+   ───────────────────────────────────────── */
+
+.wf-timeline { display: flex; flex-direction: column; gap: 0; padding-left: 16px; }
+.wf-timeline-item {
+  display: flex;
+  gap: 16px;
+  position: relative;
+  padding-bottom: 20px;
+}
+.wf-timeline-item:last-child { padding-bottom: 0; }
+.wf-timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -10px;
+  top: 20px;
+  bottom: 0;
+  width: 2px;
+  background: #ccc;
+}
+.wf-timeline-item:last-child::before { display: none; }
+.wf-timeline-dot {
+  width: 20px; height: 20px;
+  border: 2px solid #111;
+  border-radius: 50%;
+  background: #fff;
+  flex-shrink: 0;
+  margin-left: -26px;
+  margin-top: 2px;
+}
+.wf-timeline-dot.filled { background: #111; }
+.wf-timeline-body { display: flex; flex-direction: column; gap: 2px; flex: 1; }
+.wf-timeline-title { font-weight: bold; font-size: 13px; }
+.wf-timeline-time  { font-size: 11px; color: #888; }
+.wf-timeline-text  { font-size: 12px; color: #555; }
