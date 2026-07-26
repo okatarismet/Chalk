@@ -1,6 +1,6 @@
 {
   "name": "chalk-css",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Low-fidelity UI primitives for AI-assisted wireframing. One CSS file. Zero decisions.",
   "main": "chalk.css",
   "style": "chalk.css",
@@ -17,6 +17,7 @@
   "files": [
     "chalk.css",
     "README.md",
+    "CHANGELOG.md",
     "LICENSE"
   ],
   "keywords": [
