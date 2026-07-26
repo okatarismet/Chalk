@@ -109,7 +109,7 @@ Or reference from `node_modules` directly:
 No PostCSS, no purge configuration, no setup — the file is intentionally small. Use `wf-` class names directly in your HTML:
 
 ```html
-<div class="wf-centered" style="min-height: 100vh">
+<div class="wf-centered">
   <div class="wf-h2">Sign in</div>
   <div class="wf-col" style="width: 360px; gap: 16px; margin-top: 24px">
     <div class="wf-field">
