@@ -170,6 +170,40 @@ For system-level integration (embedding Chalk into an agent's permanent context 
 
 ---
 
+## Theming
+
+Chalk is monochrome, so the whole palette is a single 17-step greyscale ramp — `--wf-g0` (darkest) through `--wf-g16` (lightest) — with semantic aliases layered on top. Override an alias to retheme one role, or override the ramp to retheme everything.
+
+| Group | Tokens |
+|-------|--------|
+| Ramp | `--wf-g0` … `--wf-g16` |
+| Ink | `--wf-ink`, `--wf-ink-soft`, `--wf-ink-muted`, `--wf-ink-dim`, `--wf-ink-faint`, `--wf-ink-ghost`, `--wf-ink-disabled`, `--wf-ink-invert` |
+| Surfaces | `--wf-bg`, `--wf-surface`, `--wf-surface-alt`, `--wf-fill`, `--wf-fill-soft`, `--wf-fill-strong`, `--wf-note-bg` |
+| Lines | `--wf-line`, `--wf-line-mid`, `--wf-line-soft`, `--wf-line-faint`, `--wf-line-hair`, `--wf-line-thin`, `--wf-line-ghost`, `--wf-line-invert` |
+| Metrics | `--wf-bw-thin`, `--wf-bw`, `--wf-bw-thick`, `--wf-font`, `--wf-fs`, `--wf-lh` |
+| Effects | `--wf-shadow-ink`, `--wf-scrim`, `--wf-hatch`, `--wf-caret` |
+
+Retheme one role:
+
+```css
+:root {
+  --wf-font: "IBM Plex Mono", monospace;
+  --wf-line: #2b2b2b;   /* softer structural borders */
+}
+```
+
+**Dark mode** ships built in. It reverses the ramp, so the result is still monochrome and still reads as a wireframe:
+
+```html
+<html data-wf-theme="dark">
+```
+
+Put the attribute on any element instead of `<html>` to theme just that subtree — useful for showing light and dark side by side on one page.
+
+This does not loosen the black-and-white constraint below. That rule governs what a wireframe looks like by default, so an agent never spends tokens picking colours; the tokens exist for the human who later wants the sketch to match a house style. Defaults are unchanged from 0.2.1, so upgrading is visually a no-op.
+
+---
+
 ## Component reference
 
 Full HTML snippets for every component: **[COMPONENTS.md](./COMPONENTS.md)**

@@ -6,17 +6,40 @@
   <title>Chalk — component demo</title>
   <link rel="stylesheet" href="../chalk.css">
   <style>
+    /* demo chrome uses the same tokens, so it follows the theme too */
     .demo-section { margin-bottom: 56px; }
-    .demo-label { font-size: 10px; text-transform: uppercase; letter-spacing: 2px; color: #aaa; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid #eee; font-family: monospace; }
-    .demo-wrap { padding: 24px; border: 1px dashed #ddd; }
+    .demo-label { font-size: 10px; text-transform: uppercase; letter-spacing: 2px; color: var(--wf-ink-ghost); margin-bottom: 16px; padding-bottom: 8px; border-bottom: var(--wf-bw-thin) solid var(--wf-line-thin); font-family: var(--wf-font); }
+    .demo-wrap { padding: 24px; border: var(--wf-bw-thin) dashed var(--wf-line-faint); }
   </style>
 </head>
 <body style="max-width: 960px; margin: 0 auto; padding: 48px 24px;">
 
   <div style="margin-bottom: 56px;">
     <div class="wf-h1">Chalk</div>
-    <p class="wf-muted" style="margin-top: 8px;">Low-fidelity UI primitives for humans and AI. <span class="wf-code">v0.1.0</span></p>
+    <p class="wf-muted" style="margin-top: 8px;">Low-fidelity UI primitives for humans and AI. <span class="wf-code">v0.2.1</span></p>
+    <div class="wf-row" style="margin-top: 16px;">
+      <span class="wf-label" style="margin: 0;">Theme</span>
+      <div class="wf-btn-group">
+        <button class="wf-btn sm primary" data-theme="">Light</button>
+        <button class="wf-btn sm" data-theme="dark">Dark</button>
+      </div>
+      <span class="wf-annotation">Every colour is a <span class="wf-code">--wf-*</span> custom property; dark is the ramp reversed.</span>
+    </div>
   </div>
+
+  <script>
+    // The entire theme switch is one attribute on <html>.
+    document.querySelectorAll('[data-theme]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var theme = btn.getAttribute('data-theme');
+        if (theme) document.documentElement.setAttribute('data-wf-theme', theme);
+        else document.documentElement.removeAttribute('data-wf-theme');
+        document.querySelectorAll('[data-theme]').forEach(function (b) {
+          b.classList.toggle('primary', b === btn);
+        });
+      });
+    });
+  </script>
 
   <!-- SHELL -->
   <div class="demo-section">
