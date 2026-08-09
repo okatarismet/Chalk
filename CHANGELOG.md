@@ -9,6 +9,29 @@ Entries for 0.1.0 and 0.2.0 were reconstructed from the commit history after
 the fact, so they summarise what shipped rather than what was recorded at the
 time.
 
+## [0.3.0] — 2026-08-09
+
+Backwards compatible. Token defaults are the exact 0.2.1 values, verified by
+diffing `getComputedStyle` across all 358 elements of the demo page — including
+`::before` / `::after` — over 42 properties under both stylesheets: zero
+differences. Upgrading changes nothing visually.
+
+### Added
+
+- Every colour, border width and type value is now a `--wf-*` custom property.
+  The palette is one 17-step greyscale ramp (`--wf-g0` darkest → `--wf-g16`
+  lightest) with semantic aliases (`--wf-ink*`, `--wf-line*`, `--wf-bg`,
+  `--wf-surface*`, `--wf-fill*`) layered on top, so you can retheme a single
+  role or the whole ramp.
+- Built-in dark preset via `data-wf-theme="dark"`, which reverses the ramp. It
+  stays monochrome, so it holds the black-and-white constraint rather than
+  relaxing it. Works on `<html>` for the page or on any element for a subtree.
+- `--wf-caret` exposes the `.wf-select` arrow, whose fill lives inside a data
+  URI and so cannot reference a `var()` directly.
+- Theme switcher in `demo/index.html`; the demo's own chrome uses the tokens
+  too, so it follows the theme.
+- Theming section in `README.md` with the full token table.
+
 ## [0.2.1] — 2026-07-26
 
 ### Fixed
@@ -54,5 +77,6 @@ time.
   dropdowns, avatars, media placeholders, modals, toasts and empty states.
 - `README.md`, `AGENT-GUIDE.md` and `CONTRIBUTING.md`.
 
+[0.3.0]: https://github.com/okatarismet/chalk/compare/v0.2.1...v0.3.0
 [0.2.1]: https://github.com/okatarismet/chalk/compare/v0.2.0...v0.2.1
 [0.2.0]: https://github.com/okatarismet/chalk/releases/tag/v0.2.0

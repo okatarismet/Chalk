@@ -325,3 +325,15 @@
   <div class="wf-avatar sm">+3</div>
 </div>
 ```
+
+### Theming
+
+Every colour, border width and type value is a `--wf-*` custom property. Dark
+mode is built in:
+
+```html
+<html data-wf-theme="dark">
+```
+
+The attribute also works on any single element to theme just that subtree. Full
+token list and override examples: **[README — Theming](./README.md#theming)**.
